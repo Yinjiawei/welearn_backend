@@ -1,5 +1,5 @@
 ## 项目介绍  
-一个基于Spring Boot + Vue.js + mysql, 创建一个视频学习直播平台
+基于Spring Boot + Vue.js + mysql, 创建一个视频学习直播平台
 
 ## 资料  
 [Spring 文档](https://spring.io/guides/)  
