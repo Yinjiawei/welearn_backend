@@ -5,6 +5,8 @@ import com.welearn.backend.dto.GithubUser;
 import com.welearn.backend.provider.GithubProvider;
 import com.welearn.backend.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -33,11 +35,14 @@ public class AuthorizeController {
     @Autowired
     private UserService userService;
 
+    Logger logger = LoggerFactory.getLogger(getClass());
+
     @GetMapping("/callback")
     public String callback(@RequestParam(name = "code") String code,
                            @RequestParam(name = "state") String state,
                            HttpServletRequest request,
                            HttpServletResponse response) {
+        logger.debug("XXX");
         AccessTokenDTO accessTokenDTO = new AccessTokenDTO();
         accessTokenDTO.setClient_id(clientId);
         accessTokenDTO.setClient_secret(clientSecret);
